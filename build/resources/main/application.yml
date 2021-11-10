@@ -1,0 +1,10 @@
+temporal:
+  serviceAddress: "127.0.0.1:7233"
+  namespace: "poc"
+logging:
+  level:
+    org:
+      springframework: DEBUG
+server:
+  port: 9070
+

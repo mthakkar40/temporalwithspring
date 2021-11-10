@@ -1,16 +1,16 @@
+com/example/controller/MainController.java
+ com.example.controller.MainController
 com/example/workflow/MyWorkflow.java
  com.example.workflow.MyWorkflow
+com/example/service/OrderService.java
+ com.example.service.OrderService
 com/example/config/TemporalConfig.java
  com.example.config.TemporalConfig
-service/OrderService.java
- service.OrderService
-com/example/app/TemporalApp.java
- com.example.app.TemporalApp
 com/example/workflow/WorkflowImpl.java
  com.example.workflow.WorkflowImpl
 com/example/activity/MyActivityImpl.java
  com.example.activity.MyActivityImpl
 com/example/activity/MyActivity.java
  com.example.activity.MyActivity
-com/example/controller/MainController.java
- com.example.controller.MainController
+com/example/TemporalRestDemoApp.java
+ com.example.TemporalRestDemoApp

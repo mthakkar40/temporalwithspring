@@ -1,3 +1,28 @@
 temporal:
   serviceAddress: "127.0.0.1:7233"
-  namespace: "default"
+  namespace: "poc"
+logging:
+  level:
+    org:
+      springframework: DEBUG
+server:
+  port: 9070
+
+logging:
+  level:
+    org.springframework.batch: info
+    org.springframework.batch.repeat: info
+    com.zaxxer.hikari: info
+    org.springframework.jdbc: info
+    org.springframework.transaction: info
+    org.springframework.data.transaction: info
+    #com.atomikos: debug
+
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:23306/spring-batch?useSSL=false&allowPublicKeyRetrieval=true
+    username: batch
+    password: testing
+    auto-commit: false

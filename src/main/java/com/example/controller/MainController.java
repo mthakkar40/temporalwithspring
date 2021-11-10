@@ -1,13 +1,16 @@
 package com.example.controller;
 
+import com.example.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.OrderService;
+
+
 
 @RestController
 public class MainController {
+
     @Autowired
     OrderService orderService;
 
@@ -20,7 +23,7 @@ public class MainController {
     @PostMapping("/orderAccepted")
     public String orderAccepted(@RequestParam("id") String id) {
         orderService.makeOrderAccepted(id);
-        return "order Accepted";
+        return "Order Accepted";
     }
 
     @PostMapping("/orderPickedUp")
@@ -28,4 +31,10 @@ public class MainController {
         orderService.makeOrderPickedUp(id);
         return "Order Picked Up";
     }
- }
+
+    @PostMapping("/orderDelivered")
+    public String orderDelivered(@RequestParam("id") String id) {
+        orderService.makeOrderDelivered(id);
+        return "Order Delivered";
+    }
+}

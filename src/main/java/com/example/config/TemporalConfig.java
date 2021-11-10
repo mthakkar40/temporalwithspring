@@ -8,6 +8,7 @@ import io.temporal.serviceclient.WorkflowServiceStubsOptions;
 import io.temporal.worker.WorkerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -16,14 +17,13 @@ import java.beans.BeanProperty;
 
 @Component
 @Configuration
-@Profile("temporal")
 public class TemporalConfig {
 
     @Value("${temporal.serviceAddress}")
-    private String temporalServiceAddress = "127.0.0.1:7233";
+    private String temporalServiceAddress;
 
     @Value("${temporal.namespace}")
-    private String temporalNamespace = "default";
+    private String temporalNamespace;
 
     @Bean
     public WorkflowServiceStubs workflowServiceStubs() {
@@ -44,6 +44,7 @@ public class TemporalConfig {
 
     @Bean
     public MyActivityImpl SignUpActivity() {
+
         return new MyActivityImpl();
     }
 }
